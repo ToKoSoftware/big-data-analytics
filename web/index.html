@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Would you survive Titanic?</title>
+      <meta name="description" content="A WWI19A Project">
+      <link rel="stylesheet" href="https://tomaskostadinov.com/site/templates/styles/2.min.css">
+   </head>
+   <body>
+      <form id="titanic-form" class="max-w-md mx-auto mt-5">
+         <div class="sm:rounded-lg bg-green-500 text-white hidden" id="success">
+            <div class="px-2 py-3 sm:p-6">
+               <h3 class="text-lg leading-6 font-medium text-white">Sie hätten überlebt!</h3>
+               <div class="mt-2 text-sm text-white">
+                  <div>Mit den von Ihnen angebebenen Daten hätten Sie den Untergang der Titanic überlebt.</div>
+               </div>
+            </div>
+         </div>
+         <div class="sm:rounded-lg bg-red-500 text-white hidden" id="failure">
+            <div class="px-2 py-3 sm:p-6">
+               <h3 class="text-lg leading-6 font-medium text-white">Sie hätten nicht überlebt!</h3>
+               <div class="mt-2 text-sm text-white">
+                  <div>Mit den von Ihnen angebebenen Daten hätten Sie den Untergang des Schiffes nicht überlebt.</div>
+               </div>
+            </div>
+         </div>
+         <div class="relative mt-5">
+            <label class="leading-7 text-md text-gray-800 dark:text-white" for="undefined">Personengruppe</label>
+            <div class="text-sm text-gray-700 mb-3">Wählen Sie eine Personengruppe, zu der Sie angehören</div>
+            <div class="relative">
+               <select class="dark:bg-gray-900 rounded border appearance-none border-gray-300 focus:outline-none w-full text-base mb-4 focus:border-malachite-600 dark:text-white outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 bg-gray-100 ng-pristine ng-valid ng-touched" id="title">
+                  <option value="6">Männlich</option>
+                  <option value="0">Verheiratete Frau</option>
+                  <option value="1" selected>Unverheiratete Frau</option>
+                  <option value="2">Militärangehöriger</option>
+                  <option value="3">Adelig</option>
+                  <option value="4">Akademiker</option>
+                  <option value="5">Geistlich</option>
+               </select>
+               <span class="absolute right-0 -mt-3 pt-1.5 top-0 h-full w-10 text-center dark:text-white text-black pointer-events-none flex items-center justify-center"
+                  >
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-4 h-4">
+                     <path d="M6 9l6 6 6-6"></path>
+                  </svg
+                     >
+               </span>
+            </div>
+         </div>
+         <div class="relative">
+            <label class="leading-7 text-md text-gray-800 dark:text-white" for="undefined">Geschlecht</label>
+            <div class="text-sm text-gray-700 mb-3">Wählen Sie ein Geschlecht aus</div>
+            <div class="relative">
+               <select class="dark:bg-gray-900 rounded border appearance-none border-gray-300 focus:outline-none w-full text-base mb-4 focus:border-malachite-600 dark:text-white outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 bg-gray-100 ng-pristine ng-valid ng-touched" id="sex">
+                  <option value="1">Weiblich</option>
+                  <option value="0">Männlich</option>
+               </select>
+               <span class="absolute right-0 -mt-3 pt-1.5 top-0 h-full w-10 text-center dark:text-white text-black pointer-events-none flex items-center justify-center"
+                  >
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-4 h-4">
+                     <path d="M6 9l6 6 6-6"></path>
+                  </svg
+                     >
+               </span>
+            </div>
+         </div>
+         <div class="relative">
+            <label class="leading-7 text-md text-gray-800 dark:text-white" for="undefined">Reiseklasse</label>
+            <div class="text-sm text-gray-700 mb-3">Wählen Sie die Klasse, in der Sie Reisen möchten. Die erste Klasse ist hierbei die höchste, die dritte die niedrigste.</div>
+            <div class="relative">
+               <select class="dark:bg-gray-900 rounded border appearance-none border-gray-300 focus:outline-none w-full text-base mb-4 focus:border-malachite-600 dark:text-white outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 bg-gray-100 ng-pristine ng-valid ng-touched" id="pclass">
+                  <option value="1">1. Klasse</option>
+                  <option value="2" selected>2. Klasse</option>
+                  <option value="3">3. Klasse</option>
+               </select>
+               <span class="absolute right-0 -mt-3 pt-1.5 top-0 h-full w-10 text-center dark:text-white text-black pointer-events-none flex items-center justify-center"
+                  >
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-4 h-4">
+                     <path d="M6 9l6 6 6-6"></path>
+                  </svg
+                     >
+               </span>
+            </div>
+         </div>
+         <div class="flex space-x-2">
+            <div class="relative flex-1 mr-2">
+               <label class="leading-7 text-md text-gray-800 dark:text-white" for="undefined">Geschwister / Ehepartner</label>
+               <div class="text-sm text-gray-700 mb-3">Geben Sie die Anzahl der Mitreisenden an</div>
+               <div class="relative">
+                  <input oninput="this.value = Math.abs(this.value)" min="0"
+                     class="w-full rounded border border-gray-300 dark:bg-gray-900 dark:text-white text-base outline-none pt-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 bg-gray-100 focus:border-malachite-600 mb-4" id="sibsp" type="number" placeholder="2" value="0" />
+               </div>
+            </div>
+            <div class="relative flex-1">
+               <label class="leading-7 text-md text-gray-800 dark:text-white" for="undefined">Kinder bzw. Elternteile</label>
+               <div class="text-sm text-gray-700 mb-3">Geben Sie die Anzahl der Mitreisenden an</div>
+               <div class="relative">
+                  <input oninput="this.value = Math.abs(this.value)" min="0"
+                     class="w-full rounded border border-gray-300 dark:bg-gray-900 dark:text-white text-base outline-none pt-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 bg-gray-100 focus:border-malachite-600 mb-4" id="parch" type="number" placeholder="2" value="0" />
+               </div>
+            </div>
+         </div>
+         <div class="flex justify-end w-full">
+            <button class="text-white transition ease-in-out duration-150 border border-transparent focus:outline-none rounded focus:border-malachite-700 bg-black bg-accent-hover active:bg-malachite-700 py-1 px-2 text-lg text-center" type="submit">
+            Berechnen
+            </button>
+         </div>
+      </form>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/3.9.0/tf.min.js"
+         integrity="sha512-UoV7ETlrrOybH7VFmm3JBGngKEAp38nLlKcEGXxI71Dt/qdN4NNRz0Us74ka1j5wuHuemzgvgZHCpZNQk4PjKg=="
+         crossorigin="anonymous" crossOriginicy="no-referrer"></script>
+      <script type="module" src="./titanic.js"></script>
+   </body>
+</html>
